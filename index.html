@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otro Sistema Music</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div id="directory-selector" class="directory-prompt">
+            <h2>Welcome to Otro Sistema Music</h2>
+            <p>Select your music directory to begin</p>
+            <input type="file" id="directory-input" webkitdirectory directory multiple style="display: none;">
+            <button id="select-directory">Open Music Directory</button>
+        </div>
+
+        <div id="player-container" class="glass-player hidden">
+            <div class="current-track">
+                <div class="album-art">
+                    <img id="current-song-image" src="./images/default-album.jpg" alt="Album Art">
+                </div>
+                <div class="track-info">
+                    <h2 id="current-song">No song selected</h2>
+                    <p id="current-artist">Unknown Artist</p>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="prev-btn"><i class="fas fa-backward"></i></button>
+                <button id="play-btn"><i class="fas fa-play"></i></button>
+                <button id="next-btn"><i class="fas fa-forward"></i></button>
+            </div>
+
+            <div class="volume-bar">
+                <i class="fas fa-volume-up"></i>
+                <input type="range" id="volume-slider" min="0" max="100" value="100">
+            </div>
+        </div>
+
+        <div class="search-container glass-search hidden">
+            <div class="search-wrapper">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="search-input" placeholder="Search songs...">
+            </div>
+        </div>
+
+        <div id="playlist" class="glass-playlist hidden">
+            <!-- Songs will be added here dynamically -->
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
